@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="container text-center mt-5">
+    <h2>{{person|capfirst}},{{message}} </h2>
+</div>
+
+<div class="container text-center mt-5">
+    <a href="{% url 'download' person.id %}" class="btn btn-primary btn-lg">Download ZIP</a>
+</div>
+</body>
+</html>
+
+
+

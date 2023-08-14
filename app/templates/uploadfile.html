@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+     <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center font-weight-bold">Welcome, {{ obj.name | capfirst }}</h1>
+                <h1 class="text-center">Upload Your Documents here</h1>
+                <hr>
+                <form action="/upload/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{obj.id}}">
+                    <div class="form-group">
+                        <label for="profile_photo">Profile Photo</label>
+                        <input type="file" class="form-control-file" name="profile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="aadhar_card">Aadhar Card</label>
+                        <input type="file" class="form-control-file" name="aadhar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pan_card">Pan Card</label>
+                        <input type="file" class="form-control-file" name="pancard" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksheet">Marksheet</label>
+                        <input type="file" class="form-control-file" name="marksheet" required>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+              </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
